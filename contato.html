@@ -21,7 +21,7 @@
                 <h2>FORMULÁRIO DE CONTATO</h2>
                 <hr class="divisor">
 
-                <form id="formContato" onsubmit="enviarFormulario(event)">
+                <form id="formContato" action="https://formspree.io/f/mdeklwgv" method="POST">
                     
                     <div class="grupo-campo">
                         <label for="nome">Nome Completo:</label>
@@ -44,25 +44,61 @@
                     </div>
 
                     <div class="botoes-acao">
-                        <button type="submit" class="btn-sistema">Enviar Mensagem</button>
+                        <button type="submit" id="btnEnviar" class="btn-sistema">Enviar Mensagem</button>
                         <a href="index.html" class="btn-sistema btn-voltar">Voltar ao Currículo</a>
                     </div>
                 </form>
 
-                <div id="mensagemSucesso" class="alerta-sucesso" style="display: none;">
+                <div id="mensagemSucesso" class="alerta-sucesso" style="display: none; text-align: center; margin-top: 20px;">
                     <p>✨ Mensagem enviada com sucesso! Obrigada pelo contato.</p>
+                    <br>
+                    <a href="index.html" class="btn-sistema" style="display: inline-block; text-decoration: none; margin-top: 10px;">Voltar ao Currículo</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Script de Envio -->
+    <!-- Script para envio via Formspree sem sair da página -->
     <script>
-        function enviarFormulario(event) {
+        const form = document.getElementById("formContato");
+        
+        async function handleSubmit(event) {
             event.preventDefault();
-            document.getElementById('formContato').style.display = 'none';
-            document.getElementById('mensagemSucesso').style.display = 'block';
+            const status = document.getElementById("btnEnviar");
+            status.textContent = "Enviando...";
+            status.disabled = true;
+            
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('formContato').style.display = 'none';
+                    document.getElementById('mensagemSucesso').style.display = 'block';
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+                        }
+                        status.textContent = "Enviar Mensagem";
+                        status.disabled = false;
+                    })
+                }
+            }).catch(error => {
+                alert("Erro de conexão. Verifique sua internet e tente novamente.");
+                status.textContent = "Enviar Mensagem";
+                status.disabled = false;
+            });
         }
+        
+        form.addEventListener("submit", handleSubmit)
     </script>
 </body>
 </html>
