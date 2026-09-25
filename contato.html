@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C:\CAROLINE\CONTATO.txt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-formulario">
+
+    <div class="container-formulario">
+        <div class="janela-sistema">
+            <div class="barra-titulo">
+                <span>C:\CAROLINE\FORMULARIO_CONTATO.exe</span>
+                <div class="botoes-janela">
+                    <a href="index.html" class="botao-fechar" title="Fechar">×</a>
+                </div>
+            </div>
+
+            <div class="conteudo-janela">
+                <h2>FORMULÁRIO DE CONTATO</h2>
+                <hr class="divisor">
+
+                <form id="formContato" onsubmit="enviarFormulario(event)">
+                    
+                    <div class="grupo-campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="endereco">Endereço (Bairro / Cidade / UF):</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Ex: Perus / São Paulo / SP" required>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="comentarios">Comentários:</label>
+                        <textarea id="comentarios" name="comentarios" rows="3" placeholder="Escreva sua mensagem..."></textarea>
+                    </div>
+
+                    <div class="botoes-acao">
+                        <button type="submit" class="btn-sistema">Enviar Mensagem</button>
+                        <a href="index.html" class="btn-sistema btn-voltar">Voltar ao Currículo</a>
+                    </div>
+                </form>
+
+                <div id="mensagemSucesso" class="alerta-sucesso" style="display: none;">
+                    <p>✨ Mensagem enviada com sucesso! Obrigada pelo contato.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Envio -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            document.getElementById('formContato').style.display = 'none';
+            document.getElementById('mensagemSucesso').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+/* Estilo Portfólio Retrô Interativo - Lilás e Azul Bebê */
+:root {
+    --bg-lilas: #e3d7f7;
+    --window-bg: #fffcf9;
+    --window-border: #7b52ab;
+    --title-bar: #9a73d1;
+    --folder-blue: #b4d2e7;
+    --folder-blue-hover: #96c2e0;
+    --text-color: #2b2b2b;
+    --text-muted: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-lilas);
+    color: var(--text-color);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* Lado Esquerdo: Pastas e Dados Pessoais */
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.retro-box {
+    background: var(--window-bg);
+    border: 3px solid var(--window-border);
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px rgba(123, 82, 171, 0.4);
+    padding: 15px;
+}
+
+.perfil-container {
+    text-align: center;
+}
+
+.perfil-img-grande {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--window-border);
+    margin-bottom: 10px;
+}
+
+.perfil-container h1 {
+    font-size: 18px;
+    color: #593259;
+    margin-bottom: 5px;
+}
+
+.perfil-container p {
+    font-size: 12px;
+    color: #7b52ab;
+    font-weight: bold;
+}
+
+.retro-box h3 {
+    font-size: 13px;
+    color: #593259;
+    margin-bottom: 8px;
+    border-bottom: 2px dashed var(--window-border);
+    padding-bottom: 4px;
+}
+
+.retro-box p {
+    font-size: 11px;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.folder-item {
+    background-color: var(--folder-blue);
+    border: 2px solid #507894;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    color: #1f3a4d;
+    box-shadow: 3px 3px 0px #507894;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.folder-item:hover {
+    background-color: var(--folder-blue-hover);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #507894;
+}
+
+/* Lado Direito: Janelas de Conteúdo */
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.retro-window {
+    background: var(--window-bg);
+    border: 3px solid var(--window-border);
+    border-radius: 4px;
+    box-shadow: 6px 6px 0px rgba(123, 82, 171, 0.4);
+    overflow: hidden;
+    display: none;
+}
+
+.retro-window.active {
+    display: block;
+}
+
+.window-header {
+    background-color: var(--title-bar);
+    color: white;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.win-btn {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 1px solid #333;
+    display: inline-block;
+}
+.win-btn.close { background: #ff6b6b; cursor: pointer; }
+
+.window-body {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 15px;
+    color: #593259;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0d5ec;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+p, li {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+.item-conteudo {
+    margin-bottom: 12px;
+}
+
+.item-conteudo h4 {
+    font-size: 13px;
+    color: #333;
+}
+
+.sub-texto {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* --- COMPUTADOR RETRÔ AZUL COM A IMAGEM DE FUNDO --- */
+.computer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.retro-monitor {
+    background-color: #f6e0ef;
+    background-image: url('fundo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 6px solid #28536b;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 260px;
+    padding: 25px 20px;
+    box-shadow: 5px 5px 0px rgba(40, 83, 107, 0.4);
+    text-align: center;
+    position: relative;
+}
+
+.monitor-power-led {
+    width: 8px;
+    height: 8px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+    box-shadow: 0 0 4px #ff6b6b;
+}
+
+.retro-monitor h3 {
+    font-size: 13px;
+    color: #2b1b3d;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    padding: 4px 12px;
+    border: 2px solid #db98d1;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Organização dos Botões de Acesso Rápido */
+.links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-grid a {
+    display: inline-block;
+    background-color: #9a73d1;
+    color: #ffffff !important;
+    padding: 10px 14px;
+    border: 3px solid #593259;
+    border-radius: 0px;
+    text-decoration: none !important;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px #593259;
+    transition: all 0.1s ease;
+    text-align: center;
+}
+
+.links-grid a:hover {
+    background-color: #b192c7;
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px #593259;
+}
+
+/* Deixa o primeiro botão (LinkedIn) com fundo branco em destaque */
+.links-grid a:first-child {
+    background-color: #ffffff;
+    color: #2b1b3d !important;
+}
+
+.links-grid a:first-child:hover {
+    background-color: #f7f3fb;
+}
+
+.monitor-stand {
+    width: 80px;
+    height: 15px;
+    background: #28536b;
+    margin: 0 auto;
+}
+
+.monitor-base-feet {
+    width: 140px;
+    height: 8px;
+    background: #1d3c4e;
+    border-radius: 4px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 0px rgba(29, 60, 78, 0.4);
+}
+
+/* --- ESTILOS DA PÁGINA DE FORMULÁRIO (CONTATO.HTML) --- */
+
+body.pagina-formulario {
+    background-color: var(--bg-lilas);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container-formulario {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.janela-sistema {
+    background-color: var(--window-bg);
+    border: 3px solid var(--window-border);
+    border-radius: 4px;
+    box-shadow: 6px 6px 0px rgba(123, 82, 171, 0.4);
+    overflow: hidden;
+}
+
+.barra-titulo {
+    background-color: var(--title-bar);
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.botoes-janela .botao-fechar {
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid #333;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.botoes-janela .botao-fechar:hover {
+    background-color: #ff5252;
+}
+
+.conteudo-janela {
+    padding: 25px;
+}
+
+.conteudo-janela h2 {
+    color: #593259;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.divisor {
+    border: none;
+    border-top: 2px dashed var(--window-border);
+    margin-bottom: 20px;
+}
+
+.grupo-campo {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    color: #593259;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.grupo-campo input, 
+.grupo-campo textarea {
+    padding: 10px;
+    border: 2px solid var(--window-border);
+    border-radius: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 12px;
+}
+
+.grupo-campo input:focus, 
+.grupo-campo textarea:focus {
+    outline: none;
+    border-color: #593259;
+    box-shadow: 0 0 4px rgba(123, 82, 171, 0.4);
+}
+
+.linha-dupla {
+    display: flex;
+    gap: 15px;
+}
+
+.linha-dupla .grupo-campo {
+    flex: 1;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-sistema {
+    background-color: #9a73d1;
+    color: white;
+    border: 2px solid #593259;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    box-shadow: 3px 3px 0px #593259;
+    transition: 0.1s;
+}
+
+.btn-sistema:hover {
+    background-color: #b192c7;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #593259;
+}
+
+.btn-voltar {
+    background-color: #e3d7f7;
+    color: #593259;
+}
+
+.btn-voltar:hover {
+    background-color: #d1c4e9;
+}
+
+.alerta-sucesso {
+    background-color: #e8f5e9;
+    border: 2px solid #81c784;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}

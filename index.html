@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio & Currículo - Caroline Ferreira da Silva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+        
+        <!-- Lado Esquerdo: Perfil e Pastas -->
+        <div class="sidebar">
+            
+            <div class="retro-box">
+                <div class="perfil-container">
+                    <img src="foto.jpg" alt="Foto de Perfil" class="perfil-img-grande">
+                    <h1>Caroline Ferreira</h1>
+                    <p>Ciência da Computação</p>
+                </div>
+            </div>
+
+            <div class="retro-box">
+                <h3> Informações Pessoais</h3>
+                <p><strong>Tel:</strong> (11) 94789-3862</p>
+                <p><strong>E-mail:</strong> carolineferreira7594@gmail.com</p>
+                <p><strong>Endereço:</strong> Perus, São Paulo - SP</p>
+            </div>
+
+            <div class="folder-item" onclick="abrirJanela('objetivo')">
+                📂 Objetivo Profissional
+            </div>
+
+            <div class="folder-item" onclick="abrirJanela('formacao')">
+                📂 Formação Acadêmica
+            </div>
+
+            <div class="folder-item" onclick="abrirJanela('trabalhos')">
+                📂 Histórico Profissional
+            </div>
+
+            <div class="folder-item" onclick="abrirJanela('cursos')">
+                📂 Cursos & Certificações
+            </div>
+
+        </div>
+
+        <!-- Lado Direito: Janelas e o Computador Retrô Azul com Fundo Personalizado -->
+        <div class="content-area">
+            
+            <div id="objetivo" class="retro-window active">
+                <div class="window-header">
+                    <span>C:\CAROLINE\OBJETIVO.txt</span>
+                    <div class="window-buttons"><span class="win-btn close" onclick="fecharJanelas()"></span></div>
+                </div>
+                <div class="window-body">
+                    <h2>Objetivo Profissional</h2>
+                    <p>Estudante de Ciência da Computação em busca de oportunidades de estágio ou início de carreira na área de Tecnologia da Informação, com foco em desenvolvimento de software, suporte técnico, administração ou inclusão digital. Comprometida em aplicar conhecimentos de programação, lógica e resolução de problemas.</p>
+                </div>
+            </div>
+
+            <div id="formacao" class="retro-window">
+                <div class="window-header">
+                    <span>C:\CAROLINE\FORMACAO.txt</span>
+                    <div class="window-buttons"><span class="win-btn close" onclick="fecharJanelas()"></span></div>
+                </div>
+                <div class="window-body">
+                    <h2>Formação Acadêmica</h2>
+                    <div class="item-conteudo">
+                        <h4>Bacharelado em Ciência da Computação (2º Semestre / Em andamento)</h4>
+                        <p class="sub-texto">Universidade Cruzeiro do Sul - Campus Paulista | Previsão de conclusão: 2029</p>
+                    </div>
+                    <div class="item-conteudo">
+                        <h4>Ensino Médio Completo</h4>
+                        <p class="sub-texto">Concluído em 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trabalhos" class="retro-window">
+                <div class="window-header">
+                    <span>C:\CAROLINE\TRABALHOS.txt</span>
+                    <div class="window-buttons"><span class="win-btn close" onclick="fecharJanelas()"></span></div>
+                </div>
+                <div class="window-body">
+                    <h2>Histórico Profissional</h2>
+                    <div class="item-conteudo">
+                        <h4>Agente de Inclusão Digital - Ser Especial (Atual)</h4>
+                        <p>Atendimento e suporte direto ao público para o uso de ferramentas digitais, sistemas e internet. Orientação de usuários para autonomia digital e suporte técnico básico.</p>
+                    </div>
+                    <div class="item-conteudo">
+                        <h4>Recepcionista de Biblioteca - Biblioteca Brito Broca (2026)</h4>
+                        <p>Recepção e atendimento aos usuários, controle de entrada/saída, cadastro de leitores, organização do acervo e empréstimo de livros.</p>
+                    </div>
+                    <div class="item-conteudo">
+                        <h4>Jovem Aprendiz Administrativo - UBS (2024 - 2026)</h4>
+                        <p>Organização e digitalização de prontuários médicos, atendimento telefônico e presencial, agendamento de consultas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cursos" class="retro-window">
+                <div class="window-header">
+                    <span>C:\CAROLINE\CURSOS.txt</span>
+                    <div class="window-buttons"><span class="win-btn close" onclick="fecharJanelas()"></span></div>
+                </div>
+                <div class="window-body">
+                    <h2>Cursos e Certificações</h2>
+                    <ul>
+                        <li><strong>Programação em Python:</strong> Curso em Vídeo / Gustavo Guanabara (Concluído, 2026).</li>
+                        <li><strong>Desenvolvimento Web (HTML):</strong> Rafaela Ballerini / YouTube (Em andamento, 2026).</li>
+                        <li><strong>Linguagem C e Estrutura de Dados:</strong> Estudos focados em algoritmos e sintaxe.</li>
+                        <li><strong>Programação em Java:</strong> Curso em Vídeo / Gustavo Guanabara (Em andamento, 2026).</li>
+                        <li><strong>Fundamentos de Segurança Cibernética:</strong> Santander Open Academy (Em andamento, 2026).</li>
+                        <li><strong>Atendimento ao Cliente:</strong> Fundação Bradesco (Concluído, 2025).</li>
+                        <li><strong>Pacote Office Básico:</strong> Fundação Bradesco (Concluído, 2024).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Computador de Mesa Retrô Azul com a Imagem de Fundo -->
+            <div class="computer-container">
+                <div class="retro-monitor">
+                    <div class="monitor-power-led"></div>
+                    <h3> Acesso Rápido - Links Oficiais</h3>
+                    <div class="links-grid">
+                        <a href="https://www.linkedin.com/in/caroline-silva-9678912b1" target="_blank" class="botao-link">LinkedIn</a>
+                        <a href="https://github.com/lunamoon13"" target="_blank" class="botao-link">GitHub Principal</a>
+                        <a href="https://lunamoon13.github.io/caroline-level-up/" target="_blank" class="botao-link">Portfólio Web</a>
+                        <a href="contato.html" target="_blank" class="botao-link">Formulário</a>
+                    </div>
+                </div>
+                <div class="monitor-stand"></div>
+                <div class="monitor-base-feet"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function fecharJanelas() {
+            const janelas = document.querySelectorAll('.retro-window');
+            janelas.forEach(j => j.classList.remove('active'));
+        }
+
+        function abrirJanela(id) {
+            fecharJanelas();
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
